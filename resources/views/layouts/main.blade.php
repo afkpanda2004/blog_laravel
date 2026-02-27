@@ -8,7 +8,7 @@
     <title>Blog Home - Start Bootstrap Template</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{asset('assets/favicon.ico')}}" />
-    <!-- Core theme CSS (includes Bootstrap)-->
+    <!-- Core theme CSS (include Bootstrap)-->
     <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
 </head>
 <body>
