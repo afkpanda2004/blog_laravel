@@ -9,7 +9,7 @@
     <title>Dashboard - SB Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="{{asset('css/styless.css')}}" rel="stylesheet" />
-    <!-- SUMMERNOTE LITE CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
@@ -21,19 +21,21 @@
 </div>
 </div>
 
-<!-- JQUERY (ОБЯЗАТЕЛЬНО ПЕРЕД SUMMERNOTE) -->
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- BOOTSTRAP -->
+
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js' crossorigin="anonymous"></script>
-<!-- SUMMERNOTE LITE JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 <script src="{{asset('js/scriptss.js')}}"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js' crossorigin="anonymous"></script>
 <script src='https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js' crossorigin="anonymous"></script>
 <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
+<script src="{{asset('bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 
-<!-- ПРОСТЕЙШАЯ ИНИЦИАЛИЗАЦИЯ -->
+
+
 <script>
     $(document).ready(function() {
         $('textarea').summernote({
@@ -46,6 +48,9 @@
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']]
             ]
+        });
+        $(function () {
+            bsCustomFileInput.init();
         });
     });
 </script>
