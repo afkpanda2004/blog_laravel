@@ -16,6 +16,7 @@
                             <div class="form group mt-3">
                                 <textarea id="summernote" name="content">
                                     {{old('content')}}
+
                                 </textarea>
                                 @error('content')
                                 <div class="text-danger">Это поле надо заполнить</div>
@@ -23,13 +24,46 @@
                             </div>
                             <div class="mb-3 mt-3">
                                 <label for="formFile" class="form-label">Добавьте превью</label>
-                                <input class="form-control" type="file" name="main_image">
+                                <input class="form-control" type="file" name="preview_image">
+                                @error('preview_image')
+                                <div class="text-danger">Это поле надо заполнить</div>
+                                @enderror
+
                             </div>
                             <div class="mb-3 mt-3">
                                 <label for="formFile" class="form-label">Добавьте изображение</label>
-                                <input class="form-control" type="file" name="preview_image">
+                                <input class="form-control" type="file" name="main_image">
+                                @error('main_image')
+                                <div class="text-danger">Это поле надо заполнить</div>
+                                @enderror
+
                             </div>
-                            <div class="form group">
+                            <div class="form-floating mt-3">
+                                <select name="category_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                    @foreach($categories as $category)
+                                    <option value="{{$category->id}}" {{$category->id == old('category_id') ? 'selected' : ''}}>
+                                        {{$category->title}}</option>
+                                    @endforeach
+                                        @error('category_id')
+                                        <div class="text-danger">Это поле надо заполнить</div>
+                                        @enderror
+
+                                </select>
+                                <label for="floatingSelect">Выберите категорию</label>
+                            </div>
+                            <div class="form-group mt-3" >
+                                <label>Добавьте тэг/тэги</label>
+                                <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Выберите тэги" style="width: 100%;">
+                                    @foreach($tags as $tag)
+                                    <option {{is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : ''}}
+                                            value="{{$tag->id}}" >{{$tag->title}}</option>
+                                    @endforeach
+                                        @error('tag_ids[]')
+                                        <div class="text-danger">Это поле надо заполнить</div>
+                                        @enderror
+                                </select>
+                            </div>
+                            <div class="form group mt-3">
                                 <button  class="btn btn-primary btn-sm">Добавить</button>
                             </div>
 
