@@ -7,9 +7,9 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Dashboard - SB Admin</title>
+    <link href="{{asset('select2/css/select2.min.css')}}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="{{asset('css/styless.css')}}" rel="stylesheet" />
-
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
@@ -33,6 +33,8 @@
 <script src='https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js' crossorigin="anonymous"></script>
 <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
 <script src="{{asset('bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<script src="{{asset('select2/js/select2.full.min.js')}}"></script>
+
 
 
 
@@ -52,6 +54,7 @@
         $(function () {
             bsCustomFileInput.init();
         });
+        $('.select2').select2()
     });
 </script>
 </body>
