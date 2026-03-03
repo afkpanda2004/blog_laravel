@@ -11,7 +11,7 @@ class StoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return true ;
     }
 
     /**
@@ -27,8 +27,8 @@ class StoreRequest extends FormRequest
             'preview_image' => 'required |file',
             'main_image' => 'required |file',
             'category_id' => 'required|integer|exists:categories,id',
-            'tag_ids' => 'nullable|array',
-            'tag_ids.*' => 'nullable|integer|exists:tags,id', // правило что будет применяться к каждому тэгу из массива
+            'tag_ids' => 'required|array',
+            'tag_ids.*' => 'required|integer|exists:tags,id', // правило что будет применяться к каждому тэгу из массива
         ];
     }
 }

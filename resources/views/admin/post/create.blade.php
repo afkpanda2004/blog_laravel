@@ -39,17 +39,18 @@
 
                             </div>
                             <div class="form-floating mt-3">
-                                <select name="category_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                <select name="category_id" class="form-select">
+                                    <option value="" disabled {{ old('category_id') ? '' : 'selected' }}>Выберите категорию</option>
                                     @foreach($categories as $category)
-                                    <option value="{{$category->id}}" {{$category->id == old('category_id') ? 'selected' : ''}}>
-                                        {{$category->title}}</option>
+                                        <option value="{{$category->id}}" {{ $category->id == old('category_id') ? 'selected' : '' }}>
+                                            {{$category->title}}
+                                        </option>
                                     @endforeach
-                                        @error('category_id')
-                                        <div class="text-danger">Это поле надо заполнить</div>
-                                        @enderror
-
                                 </select>
                                 <label for="floatingSelect">Выберите категорию</label>
+                                @error('category_id')
+                                <div class="text-danger">Это поле надо заполнить</div>
+                                @enderror
                             </div>
                             <div class="form-group mt-3" >
                                 <label>Добавьте тэг/тэги</label>
@@ -58,10 +59,10 @@
                                     <option {{is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : ''}}
                                             value="{{$tag->id}}" >{{$tag->title}}</option>
                                     @endforeach
-                                        @error('tag_ids[]')
-                                        <div class="text-danger">Это поле надо заполнить</div>
-                                        @enderror
                                 </select>
+                                @error('tag_ids')
+                                <div class="text-danger">Это поле надо заполнить</div>
+                                @enderror
                             </div>
                             <div class="form group mt-3">
                                 <button  class="btn btn-primary btn-sm">Добавить</button>
