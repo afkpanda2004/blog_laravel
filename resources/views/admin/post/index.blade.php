@@ -21,8 +21,8 @@
                         <tr>
                             <th>{{$post->id}}</th>
                             <td>{{$post->title}}</td>
-                            <td class="text-center"><a href="{{route('admin.category.show', $post->id) }}"><i class="fa-solid fa-eye"></i></a></td>
-                            <td class="text-center"><a href="{{route('admin.category.edit', $post->id) }}" class="text-success"><i class="fa-solid fa-pencil"></i></a></td>
+                            <td class="text-center"><a href="{{route('admin.post.show', $post->id) }}"><i class="fa-solid fa-eye"></i></a></td>
+                            <td class="text-center"><a href="{{route('admin.post.edit', $post->id) }}" class="text-success"><i class="fa-solid fa-pencil"></i></a></td>
 
                             <td class="text-center">
                                 <form action="{{route('admin.post.destroy', $post->id) }}" method="POST">
