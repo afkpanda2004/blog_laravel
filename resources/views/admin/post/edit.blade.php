@@ -25,7 +25,7 @@
                             </div>
                             <div class="mb-3 mt-3">
                                 <label for="formFile" class="form-label">Добавьте превью</label>
-                                <div class="w-50 mb-2">
+                                <div class="w-50 mb-2 ">
                                     <img src="{{asset('storage/' . $post->preview_image)}}" alt="preview_image" class="w-50" >
                                 </div>
                                 <input class="form-control" type="file" name="preview_image">
